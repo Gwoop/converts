@@ -2,25 +2,26 @@ package сonverts
 
 import (
 	"github.com/google/uuid"
+	"log"
 	"strconv"
 )
 
-func StringToInt64(str string) (number int64) {
+func StringToInt64(str string) (number int64, err error) {
 	i, err := strconv.ParseInt(str, 10, 64)
 	if err != nil {
-		panic(err)
+		log.Println(err)
 		return
 	}
-	return i
+	return i, err
 }
 
-func StringToInt(str string) (number int) {
+func StringToInt(str string) (number int, err error) {
 	i, err := strconv.Atoi(str)
 	if err != nil {
-		panic(err)
+		log.Println(err)
 		return
 	}
-	return i
+	return i, err
 }
 
 func IntToString(number int) (str string) {
