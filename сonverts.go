@@ -1,7 +1,6 @@
 package сonverts
 
 import (
-	"github.com/google/uuid"
 	"strconv"
 )
 
@@ -31,11 +30,6 @@ func IntToString(number int) (str string) {
 func IntToInt64(number int) (number64 int64) {
 	number64 = int64(number)
 	return number64
-}
-
-func StringToUuid(str string) (UUID uuid.UUID) {
-	UUID = uuid.Must(uuid.Parse(str))
-	return UUID
 }
 
 func UintToInt(uNumber uint) (intResult int) {
