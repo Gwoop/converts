@@ -38,6 +38,12 @@ func StringToUuid(str string) (UUID uuid.UUID) {
 	UUID = uuid.Must(uuid.Parse(str))
 	return UUID
 }
+func StringToUint(str string) (Uint uint, err error) {
+	u64, err := strconv.ParseUint(str, 10, 32)
+	Uint = uint(u64)
+
+	return Uint, err
+}
 
 func UintToInt(uNumber uint) (intResult int) {
 	intResult = int(uNumber)
